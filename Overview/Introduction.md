@@ -35,7 +35,7 @@ Micro的核心是简单易用，任何人都可以轻松开始编写微服务。
 ## 运行时
 该工具包是可插入式并运行时不感知。在笔记本电脑基于docker，使用kubernetes上运行micro或者AWS等等。
 
-![](https://micro.mu/docs/images/overview.png)
+![](overview.png)
 
 ## 了解更多
 浏览此文档以了解更多信息，查看下面的资源或尝试一些[示例](https://github.com/micro/examples)。
@@ -46,4 +46,4 @@ Micro的核心是简单易用，任何人都可以轻松开始编写微服务。
 - 查看演讲台上各种演示的[幻灯片](https://speakerdeck.com/asim)。
 
 ## 赞助商
-Micro的开源开发是由![](https://micro.mu/docs/images/sixt_logo.png)
+Micro的开源开发是由![](sixt_logo.png)

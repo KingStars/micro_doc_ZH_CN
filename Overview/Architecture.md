@@ -57,4 +57,4 @@ Go-micro是微服务的独立RPC框架。它是该工具包的核心，并受到
 服务器是构建正在运行的微服务的接口。它提供了一种提供RPC请求的方法。
 
 ### Plugins
-
+提供go-micro的[micro/go-plugins](https://github.com/micro/go-plugins)插件。

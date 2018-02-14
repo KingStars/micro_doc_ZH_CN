@@ -1,7 +1,7 @@
 # 编写一个Go函数
 这是开始使用go-micro函数的指南。函数是一次执行服务。
 
-如果您首先喜欢更高级别的工具包概述，请查看介绍的博客文章https://micro.mu/blog/2016/03/20/micro.html。
+如果您首先喜欢更高级别的工具包概述，请查看介绍的博客文章 https://micro.mu/blog/2016/03/20/micro.html
 
 ## 编写一个函数
 顶层[函数接口](https://godoc.org/github.com/micro/go-micro#Function)是go-micro中函数编程模型的主要组件。它封装了Service接口，同时提供一次执行。

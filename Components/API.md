@@ -1,7 +1,7 @@
 # Micro API
 micro api是微服务的API网关。使用API[网关模式](http://microservices.io/patterns/apigateway.html)为您的服务提供一个入口点。 micro api提供HTTP并动态路由到适当的后端服务。
 
-![](https://micro.mu/docs/images/api.png)
+![](api.png)
 
 ## 如何工作的
 micro api构建在go-micro上，利用它进行服务发现，负载平衡，编码和基于RPC的通信。对API的请求通过HTTP提供，并通过RPC进行内部路由。
@@ -222,4 +222,4 @@ URLs映射如下：
 micro --enable_stats api
 ```
 
-![](https://micro.mu/docs/images/stats.png)
+![](stats.png)

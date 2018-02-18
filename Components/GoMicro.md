@@ -1,7 +1,7 @@
 # Go Micro
 Go Micro是一个插件式的RPC框架。它用于分布式系统开发。
 
-![](https://micro.mu/docs/images/go-micro.png)
+![](go-micro.png)
 
 ## 特性
 Go Micro抽象出分布式系统的细节。以下是主要功能。

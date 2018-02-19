@@ -194,20 +194,20 @@ type Registry interface {
 
 
 ### 在NATS上伸缩Micro服务
-在上面的例子中，我们只在本地主机上指定了一个NATS服务器，但我们推荐的实际使用方法是设置一个NATS群集以获得高可用性和容错性。要了解有关NAT群集的更多信息，请查看[此处](http://nats.io/documentation/server/gnatsd-cluster/)的NATS文档。
+在上面的例子中，我们只在本地主机上指定了一个NATS服务器，但我们推荐的实际使用方法是，设置一个NATS群集以获得高可用性和容错性。要了解有关NAT群集的更多信息，请查看[此处](http://nats.io/documentation/server/gnatsd-cluster/)的NATS文档。
 
 Micro接受逗号分隔的地址列表作为上面提到的标志或可选地使用环境变量。如果您直接使用客户端库，它还允许一组可变主机作为注册表，传输和代理的初始化选项。
 
-就云本土世界的架构而言，我们过去的经验表明，每个AZ或每个地区的群集都是理想的。大多数云提供商在AZ之间具有相对较低（3-5ms）的延迟，这允许区域集群没有问题。在运行高可用性配置时，确保您的系统能够容忍AZ故障并且在更成熟的配置下可以承受整个区域故障很重要。我们不建议跨地区集群。理想情况下，应该使用更高级别的工具来管理多群集和多区域系统。
+对于云原生应用的世界架构而言，我们过去的经验表明，每个AZ或每个地区的群集都是理想的。大多数云提供商在AZ之间具有相对较低（3-5ms）的延迟，这允许区域集群没有问题。在运行高可用性配置时，确保您的系统能够容忍AZ故障并且在更成熟的配置下，可以承受整个区域故障很重要。我们不建议跨地区集群。理想情况下，应该使用更高级别的工具来管理多群集和多区域系统。
 
-Micro是一个令人难以置信的灵活的运行时不可知的微服务系统。它可以在任何地方和任何配置下运行。它的世界观是由服务注册表引导的。服务集群可以根据完全基于您提供服务访问权限的注册中心在机器，AZ或区域池中进行本地化和命名空间。结合NATS集群，您可以构建高度可用的体系结构以满足您的需求。
+Micro是一个令人难以置信的灵活的，运行时不感知的微服务系统。它可以在任何地方和配置下运行。它的世界是由服务注册机制引导。服务集群可以完全基于您提供访问权限的服务注册中心，AZ或区域池中进行本地化和命名空间。结合NATS集群，您可以构建高度可用的体系结构以满足您的需求。
 
 ![](region.png)
 
 ### 概要
-[NATS](http://nats.io/)是一个可扩展的高性能消息传递系统，我们认为它非常适合微服务生态系统。它与Micro的竞争非常好，我们已经证明它可以用作[注册表](https://godoc.org/github.com/micro/go-plugins/registry/nats)，[传输](https://godoc.org/github.com/micro/go-plugins/transport/nats)或[代理](https://godoc.org/github.com/micro/go-plugins/broker/nats)的插件。我们已经实施了所有三项，以突出NATS的灵活性。
+[NATS](http://nats.io/)是一个可扩展的高性能消息中间件系统，我们认为它非常适合微服务生态系统。它与Micro配合具有非常好竞争力，我们已经证明它可以用作[注册表](https://godoc.org/github.com/micro/go-plugins/registry/nats)，[传输](https://godoc.org/github.com/micro/go-plugins/transport/nats)或[代理](https://godoc.org/github.com/micro/go-plugins/broker/nats)的插件。我们已经实施了所有三项，以突出NATS的灵活性。
 
-Micro on NATS是Micro强大的可插拔架构的一个例子。每个go-micro软件包都可以通过最小的更改来实现和交换。将来看更多关于[X]的Micro示例。接下来最有可能是Kubernetes上的Micro。
+Micro on NATS，是Micro强大的可插拔架构的一个典型例子。每个go-micro软件包都可以通过最小的更改来实现和替换。将来查看更多关于[X]的Micro示例。接下来最有可能是Kubernetes上的Micro。
 
 希望这会激励你尝试使用NAT上的Micro，甚至为其他系统编写一些插件并回馈给社区。
 

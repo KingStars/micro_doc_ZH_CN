@@ -75,7 +75,7 @@ Micro是运行时不感知的。你可以在任何你喜欢的地方运行它。
 
 ## API，Web和SRV服务有什么区别？
 
-![](https://micro.mu/docs/images/arch.png)
+![](arch.png)
 
 作为Micro工具包的一部分，我们尝试通过分离API，Web仪表盘和后端服务（SRV）的关注点，为可扩展体系结构定义一组设计模式。
 

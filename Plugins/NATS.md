@@ -2,12 +2,12 @@
 这篇文档着眼于nats，将nats消息系统集成到micro工具包中。它讨论包括围绕服务发现，微服务的同步和异步通信。
 
 ## 什么是NATS？
-[NATS](http://nats.io/)是一个开源的原生云消息系统或更简单的消息总线。NATS由[Apcera](https://www.apcera.com/)的创始人Derek Collison创建。它起源于VMWare，并开始成为一个基于ruby的系统。在Go中被重写了很长时间，并且正在稳步获得那些寻求高度可扩展性和高性能消息传递系统的人的采用。
+[NATS](http://nats.io/)是一个开源的原生云消息系统或更简单的消息总线。NATS由[Apcera](https://www.apcera.com/)的创始人Derek Collison创建。它起源于VMWare，开始基于ruby的一个系统。基于Go重写了很长时间，当前正在稳步进行，并且获得那些寻求高度扩展和高性能消息传递系统的人们所采用。
 
 如果您想了解有关NATS的更多信息，请访问[nats.io](http://nats.io/)或加入[社区](http://nats.io/community/)。
 
 ## 为什么选择NATS？
-为什么不NATS？过去曾与许多消息总线合作过，很快就清楚NATS是分开的。多年来，消息传递被誉为企业的救星，导致系统试图成为所有人的一切。这导致了很多虚假的承诺，显着的性能膨胀和高成本技术，产生了比解决问题更多的问题。
+为什么不NATS？过去曾与许多消息总线合作过，很快就清楚NATS是分开的。多年来，消息总线被誉为企业的救星，导致系统试图成为所有人的一切。这导致了很多虚假的承诺，显着的性能膨胀和高成本技术，产生了比解决问题更多的问题。
 
 相比之下，NATS采取非常专注的方式，解决性能和可用性问题，同时保持令人难以置信的精益。它提到“永远在线并且可用”，并且使用“消防和忘记”消息模式。它的简单性，重点和轻量级特性使其成为微服务生态系统的主要候选者。我们相信它很快将成为服务间消息传递的主要候选人。
 
@@ -18,15 +18,14 @@ NATS提供了什么：
 - 最多一次交付
 
 什么NATS不提供：
-- 坚持
-- 合约
+- 持久化
+- 事务处理
 - 增强交付模式
-- 企业级排队
+- 企业级队列
 
 这简要介绍了选择NATS的原因。那么它如何适应Micro？来！我们讨论一下。
 
-
-### Micro的NATS
+### Micro on NATS
 [Micro](https://github.com/micro/micro)是一个微服务工具包，采用可插拔的体系结构，允许将底层的依赖关系以最小的更改进行替换。[Go-Micro](https://github.com/micro/go-micro)框架的每个接口都为微服务提供了构建块；用于服务发现的[注册表](https://godoc.org/github.com/micro/go-micro/registry#Registry)，用于同步通信的[传输](https://godoc.org/github.com/micro/go-micro/transport#Transport)，用于异步[消息总线](https://godoc.org/github.com/micro/go-micro/broker#Broker)的代理等等。
 
 为每个组件创建插件并实现接口一样简单。我们将花更多时间详细说明，如何在未来的博客文章中撰写插件。如果您想查看NATS或任何其他系统的插件，例如etcd discovery，kafka broker，rabbitmq transport，您可以在这里找到它们[github.com/micro/go-plugins](https://github.com/micro/go-plugins)。
@@ -192,8 +191,8 @@ type Registry interface {
 
 [Registry](https://github.com/micro/go-plugins/tree/master/registry/nats)
 
-
 ### 在NATS上伸缩Micro服务
+
 在上面的例子中，我们只在本地主机上指定了一个NATS服务器，但我们推荐的实际使用方法是，设置一个NATS群集以获得高可用性和容错性。要了解有关NAT群集的更多信息，请查看[此处](http://nats.io/documentation/server/gnatsd-cluster/)的NATS文档。
 
 Micro接受逗号分隔的地址列表作为上面提到的标志或可选地使用环境变量。如果您直接使用客户端库，它还允许一组可变主机作为注册表，传输和代理的初始化选项。

@@ -154,4 +154,4 @@ server.Start由service.Run调用
     ```
     
 ## 编写服务
-查看入门[文档](https://micro.mu/docs/writing-a-go-service.html)
+查看入门[文档](../Guides/WritingaGoService.md)

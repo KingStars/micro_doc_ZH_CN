@@ -41,9 +41,9 @@ Micro的核心是简单易用，任何人都可以轻松开始编写微服务。
 浏览此文档以了解更多信息，查看下面的资源或尝试一些[示例](https://github.com/micro/examples)。
 
 ## 资源
-- 阅读[博客](https://micro.mu/blog/)，深入了解微观和更广泛的微服务理念。
+- 阅读[博客](https://micro.mu/blog/)，深入了解Micro和更广泛的微服务理念。
 - 在Golang UK Conf 2016上观看Micro简化微服务的[视频](https://www.youtube.com/watch?v=xspaDovwk34)。
 - 查看演讲台上各种演示的[幻灯片](https://speakerdeck.com/asim)。
 
 ## 赞助商
-Micro的开源开发是由![](sixt_logo.png)
+Micro开源开发是由![](sixt_logo.png)赞助

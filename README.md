@@ -4,6 +4,10 @@
 - [官方文档](https://micro.mu/docs/)
 - [官方内源](https://github.com/micro/go-micro)
 
+## 下载
+- [pdf](https://legacy.gitbook.com/download/pdf/book/lixiangyun/go-micro)
+- [mobi](https://legacy.gitbook.com/download/mobi/book/lixiangyun/go-micro)
+- [epub](https://legacy.gitbook.com/download/epub/book/lixiangyun/go-micro)
 
 ## 目录
 - [概述](Overview.md)
